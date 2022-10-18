@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Purchaseclothes
+{
+    public Purchaseclothes()
+    {
+        Scanner scan = new Scanner (System.in);
+        System.out.println("Good morning");
+        System.out.println("Please enter your first name and last name");
+        String firstname = scan.next();
+        String lastname = scan.nextLine();
+        System.out.println("Enter today's date (mm/dd/yyyy):");
+        String date = scan.nextLine();
+        System.out.println("What design of clothe are you trying to buy?");
+        String design = scan.nextLine();
+        System.out.println("What kind of color do you like?");
+        String color = scan.nextLine();
+        System.out.println("What kind of clothes do you want to buy?");
+        String clothes = scan.nextLine();
+        System.out.println("How many clothes do you want to buy?");
+        String quantity = scan.nextLine();
+        System.out.println("How much is the price of one " + color  + " " + design +" " + clothes + "?");
+        String cost = scan.nextLine();
+        System.out.println("Enter your debit card number (### - ##### - ####)");
+        String card = scan.nextLine();
+        System.out.println("Enter your PIN (####)");
+        String pin = scan.nextLine();
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println("Your e-Receipt");
+        String newdate = date.replace("/", "-");
+        System.out.println("Today's date: " + newdate);
+        String ordernumber = lastname + card.substring(card.indexOf("-") + 2, card.indexOf("-") + 7);
+        System.out.println("Order number: " + ordernumber);
+        String newname = firstname.substring(0, 1) + "   " + lastname;
+        System.out.println("\t " + newname);
+        String Account = "### - ##### - " + card.substring(14, 18);
+        System.out.println("\t Account:  " + Account);
+        String clothe = color + " " + design + " " + clothes;
+        System.out.println("\t Clothe: " + clothe);
+        System.out.println("\t Number of clothes: " + quantity);
+        System.out.println(" \t Clothes price: $" + cost);
+        double finalcost = Double.parseDouble(cost) * Integer.parseInt(quantity);
+        System.out.println(" \t $" + finalcost + " will be debited to your account!");
+        System.out.println("Thanks for your purchase");
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+    }
+}

@@ -1,0 +1,97 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+
+public class Family
+{
+     public static void main(String[] args) throws IOException
+    {
+       int countgirls = 0;
+       int countboys = 0;
+       int countbg = 0;
+       int familynumber = 0;
+       String token = "";
+       
+       // this is for file test1 and test2
+       File fileName = new File("test1.txt");
+       Scanner inFile = new Scanner(fileName);
+       while(inFile.hasNextLine()){
+           token = inFile.nextLine();
+           if(token.equals("BB")){
+               countboys ++;
+               familynumber ++;
+           }
+           else if(token.equals("GB") || token.equals("BG")){
+               countbg ++;
+               familynumber ++;
+           }
+           else if(token.equals("GG")){
+               countgirls ++;
+               familynumber ++;
+           }
+           }
+        inFile.close();
+       
+        File Filename = new File("test2.txt");
+        Scanner infile = new Scanner(Filename);
+        while(infile.hasNextLine()){
+           token = infile.nextLine();
+           if(token.equals("BB")){
+               countboys ++;
+               familynumber ++;
+           }
+           else if(token.equals("GB") || token.equals("BG")){
+               countbg ++;
+               familynumber ++;
+           }
+           else if(token.equals("GG")){
+               countgirls ++;
+               familynumber ++;
+           }
+
+           }
+        infile.close();
+        
+        // this is for file family.
+    
+        
+       /* 
+       File filesname = new File("familyMembers.txt");
+        Scanner Infile = new Scanner(filesname);
+        while(Infile.hasNextLine()){
+           token = Infile.nextLine();
+           if(token.equals("BB")){
+               countboys ++;
+               familynumber ++;
+           }
+           else if(token.equals("GB") || token.equals("BG")){
+               countbg ++;
+               familynumber ++;
+           }
+           else if(token.equals("GG")){
+               countgirls ++;
+               familynumber ++;
+           }
+
+           }
+        Infile.close(); 
+        */
+        double girlspercentage = (int)((double)countgirls * 1000 / familynumber) / 10.0;
+        double boyspercentage = (int)((double)countboys * 1000 / familynumber) /10.0;
+        double mix = (int)((double)countbg * 1000 / familynumber) / 10.0;
+        System.out.println("Composition of statistics for families with two children");
+        System.out.println("\n \n");
+        System.out.println("Total number of families: " + familynumber);
+        System.out.println("Number of families with: ");
+        System.out.println("\t" + "2boys: " + countboys + "   represents   " + boyspercentage +"%");
+         System.out.println("\t" + "2girls: " + countgirls + "  represents   " + girlspercentage +"%");
+        System.out.println("\t" + "1boy and 1 girl: " + countbg + "   represents   " + mix +"%");
+        
+
+        
+        
+        
+       
+    }
+
+}

@@ -1,0 +1,102 @@
+public class MathTrick {
+           public static int getRandomNum() 
+    {   int num = (int)(Math.random()* 900) + 100;
+        int firstDigit = num / 100;
+        int lastDigit = num % 10;
+            while(Math.abs(firstDigit - lastDigit) < 2){
+                num = (int)(Math.random()* 900) + 100;
+                firstDigit = num / 100;
+                lastDigit = num % 10;
+         }
+         return num;
+        }
+            public static int reverseDigits (int num) {
+            int a = 0;
+            while(num != 0){
+                a = a*10 +(num % 10);
+            num = num / 10;
+        }
+        return a;
+        
+        }
+            
+    
+        public static String replaceLtr(String str)
+        
+    {
+        String k = "";    
+        int a = str.length();
+        for(int i = 0; i < a; i++){
+                k = str.substring(i, i +1);
+                if(k.equals("0")){
+                    str = str.replace("0", "Y");
+                }
+                else if(k.equals("1")){
+                    str = str.replace("1", "M");
+                }
+                else if(k.equals("2")){
+                    str = str.replace("2", "P");
+                }
+                else if(k.equals("3")){  
+                    str = str.replace("3", "L");
+                }
+               else if(k.equals("4")){
+                    str = str.replace("4", "R");
+                }
+               else if(k.equals("5")){
+                    str = str.replace("5", "O");
+                }
+               else if(k.equals("6")){
+                    str = str.replace("6", "F");
+                }
+               else if(k.equals("7")){
+                    str = str.replace("7", "A");
+                }
+               else if(k.equals("8")){
+                    str = str.replace("8", "I");
+                }
+               else if(k.equals("9")){
+                    str = str.replace("9", "B");
+                }
+                
+            }
+            return str;
+    
+    }
+    
+    public static String reverseString(String str) {
+        String k = "";
+        int a = str.length();
+        for(int i = a; i > 0; i--){
+            k += str.substring(i-1, i);
+        }
+        return k;
+    }
+        
+    public static void main(String[] args) 
+    {      int num = getRandomNum();
+        System.out.println("The starting number: " + num);
+            int num1 = reverseDigits(num);
+            System.out.println("The reversed number: " + num1);
+            int difference;
+            if(num >= num1){
+                difference = num - num1;
+            }
+            else{
+                difference = num1 - num;
+            }
+            System.out.println("The difference is: " + difference);
+            int num3 = reverseDigits(difference) + difference;
+            System.out.println("The reversed number added to difference: " + num3);
+            num3 = num3 * 1000000;
+            System.out.println("Number X one million: " + num3);
+            num3 = num3 - 733361573;
+            String str = String.valueOf(num3);
+            System.out.println("Number substracted and converted to String: " + str);
+            String a = replaceLtr(str);
+            System.out.println("Replaced String: " + a);
+            String b = reverseString(a);
+            System.out.println( "Reversed String: " + b);
+
+    } 
+} 
